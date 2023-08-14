@@ -5,31 +5,58 @@ import { Ranking } from './ranking.entity';
 
 @Entity()
 export class Fighter {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({
+    type: 'bigint',
+    name: 'user_id',
+  })
   id: number;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: '',
+  })
   name: string;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: '',
+  })
   weight_class: string;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: '',
+  })
   nationality: string;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: '',
+  })
   team: string;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: 0,
+  })
   wins: number;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: 0,
+  })
   losses: number;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: 0,
+  })
   knockouts: number;
 
-  @Column()
+  @Column({
+    nullable: false,
+    default: 0,
+  })
   submissions: number;
 
   // ...other statistics
