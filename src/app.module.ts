@@ -1,27 +1,20 @@
 import { Module } from '@nestjs/common';
 import { FighterModule } from './fighter/fighter.module';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import entities from './typeorm';
+import { FightModule } from './fight/fight.module';
+import { EventModule } from './event/event.module';
+import { RankingModule } from './ranking/ranking.module';
+import { dataSourceOptions } from 'db/data-source';
 
 @Module({
   imports: [
     ConfigModule.forRoot({isGlobal: true}),
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => ({
-        type: 'postgres',
-        host: configService.get('DB_HOST'),
-        port: +configService.get<number>('DB_PORT'),
-        username: configService.get('DB_USERNAME'),
-        password: configService.get('DB_PASSWORD'),
-        database: configService.get('DB_NAME'),
-        entities: entities,
-        synchronize: true,
-      }),
-      inject: [ConfigService],
-    }),
+    TypeOrmModule.forRoot(dataSourceOptions),
     FighterModule,
+    FightModule,
+    EventModule,
+    RankingModule,
   ],
   controllers: [],
   providers: [],

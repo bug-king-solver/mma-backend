@@ -1,7 +1,7 @@
 // src/entities/Fighter.ts
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Fight } from './fight.entity';
-import { Ranking } from './ranking.entity';
+import { Fight } from '../../fight/entities/fight.entity';
+import { Ranking } from '../../ranking/entities/ranking.entity';
 
 @Entity()
 export class Fighter {
