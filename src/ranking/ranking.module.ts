@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { RankingController } from './controller/ranking/ranking.controller';
-import { RankingService } from './service/ranking/ranking.service';
+import { RankingController } from './controller/ranking.controller';
+import { RankingService } from './service/ranking.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Ranking } from './entities/ranking.entity';
 
