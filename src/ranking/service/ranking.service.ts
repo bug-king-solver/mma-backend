@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Ranking } from '../entities/ranking.entity';
-import { Fighter } from 'src/fighter/entities/fighter.entity';
+import { Fighter } from '../../fighter/entities/fighter.entity';
 
 @Injectable()
 export class RankingService {
