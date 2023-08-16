@@ -47,29 +47,32 @@ $ yarn run start:prod
 
 ## Entity Relationship Diagram (ERD)
 
-+-----------+ +-------------+
-| Fighter | | Ranking |
-+-----------+ +-------------+
-| fighter_id|<>-----<| ranking_id |
-| name | | weight_class|
-| nationality| | fighter_id |
-| weight_class| | position |
-| team | +-------------+
-| wins |
-| losses | +-----------+
-| knockouts | | Event |
-| submissions| +-----------+
-+-----------+ | event_id |
-| name |
-+--------+ | location |
-| Fight | | date |
-+--------+ +--------+
+```
++-----------+        +-------------+
+|  Fighter  |        |   Ranking   |
++-----------+        +-------------+
+| fighter_id|<>-----<| ranking_id  |
+| name      |        | weight_class|
+| nationality|       | fighter_id  |
+| weight_class|      | position   |
+| team      |        +-------------+
+| wins      |
+| losses    |        +-----------+
+| knockouts |        |   Event   |
+| submissions|       +-----------+
++-----------+        | event_id  |
+                     | name      |
++--------+           | location  |
+|  Fight |           | date      |
++--------+           +--------+
 | fight_id|<>-----<| | fighter1_id |
-| event_id| | fighter2_id |
-| fighter1_id| | result |
-| fighter2_id| +--------+
-| result |
+| event_id|           | fighter2_id |
+| fighter1_id|        | result    |
+| fighter2_id|        +--------+
+| result  |
 +--------+
++--------+
+```
 
 ## APIs
 
