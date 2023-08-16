@@ -6,7 +6,7 @@ import { Fighter } from '../../fighter/entities/fighter.entity';
 export class Ranking {
   @PrimaryGeneratedColumn({
     type: 'bigint',
-    name: 'user_id',
+    name: 'ranking_id',
   })
   id: number;
 
