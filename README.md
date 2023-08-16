@@ -45,6 +45,11 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
+## APIs
+
+You can find API endpoints here:
+http://localhost:3000/api
+
 ## Test
 
 ```bash
