@@ -6,6 +6,7 @@ import { FightModule } from './fight/fight.module';
 import { EventModule } from './event/event.module';
 import { RankingModule } from './ranking/ranking.module';
 import { dataSourceOptions } from 'db/data-source';
+import { FighterFightStatisticsController } from './fighter-fight-statistics/controller/fighter-fight-statistics.controller';
 
 @Module({
   imports: [
@@ -13,10 +14,10 @@ import { dataSourceOptions } from 'db/data-source';
     TypeOrmModule.forRoot(dataSourceOptions),
     FighterModule,
     FightModule,
-    EventModule,
     RankingModule,
+    EventModule
   ],
-  controllers: [],
+  controllers: [FighterFightStatisticsController],
   providers: [],
 })
 export class AppModule {}
