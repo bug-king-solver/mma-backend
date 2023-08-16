@@ -59,8 +59,6 @@ export class Fighter {
   })
   submissions: number;
 
-  // ...other statistics
-
   @OneToMany(() => Fight, fight => fight.fighter1)
   fights1: Fight[];
 

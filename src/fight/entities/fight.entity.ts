@@ -25,6 +25,4 @@ export class Fight {
     default: '',
   })
   result: string;
-
-  // ...other details
 }

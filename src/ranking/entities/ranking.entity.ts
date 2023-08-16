@@ -24,6 +24,4 @@ export class Ranking {
     default: 0,
   })
   rank: number;
-
-  // ...other details
 }
