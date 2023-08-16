@@ -6,7 +6,7 @@ import { Fight } from '../../fight/entities/fight.entity';
 export class Event {
   @PrimaryGeneratedColumn({
     type: 'bigint',
-    name: 'user_id',
+    name: 'event_id',
   })
   id: number;
 
