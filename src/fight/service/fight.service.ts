@@ -2,17 +2,17 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Fight } from '../entities/fight.entity';
-import { RankingService } from 'src/ranking/service/ranking.service';
-import { Fighter } from 'src/fighter/entities/fighter.entity';
+import { RankingService } from '../../ranking/service/ranking.service';
+import { Fighter } from '../../fighter/entities/fighter.entity';
 
 @Injectable()
 export class FightService {
     constructor(
-        @InjectRepository(Fight)
-        @InjectRepository(Fighter)
+        @InjectRepository(Fight) 
         private fightRepository: Repository<Fight>,
+        @InjectRepository(Fighter) 
         private fighterRepository: Repository<Fighter>,
-        private rankingService: RankingService,
+        private readonly rankingService: RankingService,
     ){}
 
     async findOne(id: number): Promise<Fight> {

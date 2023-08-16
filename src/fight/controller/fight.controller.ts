@@ -41,4 +41,16 @@ export class FightController {
         }
         return this.fightService.delete(id);
     }
+
+    
+    @Get(':fighterId/fight-satistics')
+    async getFightStatisticsForFighter(@Param('fighterId') fighterId: number) {
+        const fightStatistics = await this.fightService.getFighterStatitics(fighterId);
+
+        if(!fightStatistics) {
+            throw new NotFoundException(`Fight statistics for fighter with id ${fighterId} not found`);
+        }
+
+        return fightStatistics;
+    }
 }
