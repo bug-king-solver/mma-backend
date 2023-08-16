@@ -5,10 +5,7 @@ import { Event } from '../../event/entities/event.entity';
 
 @Entity()
 export class Fight {
-  @PrimaryGeneratedColumn({
-    type: 'bigint',
-    name: 'fight_id',
-  })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @ManyToOne(() => Event, event => event.fights)

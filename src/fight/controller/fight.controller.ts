@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Body, Put, Param, Delete, NotFoundException } from '@nestjs/common';
+import { ApiOkResponse } from '@nestjs/swagger';
 import { FightService } from '../service/fight.service';
 import { Fight } from '../entities/fight.entity';
 

@@ -4,10 +4,7 @@ import { Fight } from '../../fight/entities/fight.entity';
 
 @Entity()
 export class Event {
-  @PrimaryGeneratedColumn({
-    type: 'bigint',
-    name: 'event_id',
-  })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({
