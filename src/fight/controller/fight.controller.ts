@@ -7,6 +7,12 @@ import { Fight } from '../entities/fight.entity';
 export class FightController {
     constructor(private readonly fightService: FightService) {}
 
+    //get all fights
+    @Get()
+    async findAll(): Promise<Fight[]> {
+      return this.fightService.findAll();
+    }
+
     //get fight by id
     @Get(':id')
     async findOne(@Param('id') id:number): Promise<Fight> {
