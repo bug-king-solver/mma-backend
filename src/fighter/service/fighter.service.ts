@@ -10,6 +10,10 @@ export class FighterService {
         private fighterRepository: Repository<Fighter>, 
     ){}
 
+    async findAll(): Promise<Fighter[]> {
+        return this.fighterRepository.find();
+    }
+
     async findOne(id: number): Promise<Fighter> {
         return this.fighterRepository.findOne({where: {id}});
     }

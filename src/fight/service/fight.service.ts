@@ -15,6 +15,10 @@ export class FightService {
         private readonly rankingService: RankingService,
     ){}
 
+    async findAll(): Promise<Fight[]> {
+        return this.fightRepository.find();
+    }
+
     async findOne(id: number): Promise<Fight> {
         return this.fightRepository.findOne({where: {id}});
     }
