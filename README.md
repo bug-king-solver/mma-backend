@@ -106,7 +106,9 @@ $ yarn run migration:run
 
 ```bash
 
-$ docker-compose up
+$ docker compose up
+
+$ docker compose up --build
 
 ```
 

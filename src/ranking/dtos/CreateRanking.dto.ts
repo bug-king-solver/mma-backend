@@ -1,6 +1,6 @@
 import { IsNumber, IsNotEmpty, MinLength } from "class-validator";
 
-export class CreateUserDto {
+export class CreateFighterDto {
     @IsNotEmpty()
     @MinLength(3)
     weight_class: string;

@@ -6,6 +6,12 @@ import { Event } from '../entities/event.entity';
 export class EventController {
     constructor(private readonly eventService: EventService) {}
 
+    //get all events
+    @Get()
+    async findAll(): Promise<Event[]> {
+      return this.eventService.findAll();
+    }
+
     //get event by id
     @Get(':id')
     async findOne(@Param('id') id: number): Promise<Event> {
@@ -40,6 +46,7 @@ export class EventController {
         return this.eventService.delete(id);
     }
 
+    // get upcoming events
     @Get('upcoming')
     async getUpcommingEvent() {
         const upcomingEvents = await this.eventService.getUpcomingEvents();

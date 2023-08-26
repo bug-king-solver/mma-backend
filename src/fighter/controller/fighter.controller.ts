@@ -6,6 +6,12 @@ import { Fighter } from '../entities/fighter.entity';
 export class FighterController {
     constructor(private readonly fighterService: FighterService) {}
 
+    //get all fighters
+    @Get()
+    async findAll(): Promise<Fighter[]> {
+      return this.fighterService.findAll();
+    }
+
     //get fighter by id
     @Get(':id')
     async findOne(@Param('id') id:number): Promise<Fighter> {
@@ -35,7 +41,7 @@ export class FighterController {
         //handle error if fighter does not exist
         const fighter = await this.fighterService.findOne(id);
         if (!fighter) {
-            throw new NotFoundException('User does not exist!');
+            throw new NotFoundException('Fighter does not exist!');
         }
         return this.fighterService.delete(id);
     }
